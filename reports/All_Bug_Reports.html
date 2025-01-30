@@ -1,0 +1,634 @@
+<html
+        xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>Jira</title>
+<style type="text/css">
+table {
+    mso-displayed-decimal-separator:"\.";
+    mso-displayed-thousand-separator:"\,";
+}
+body
+{
+    margin: 0px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color:black;
+}
+
+</style>
+<META HTTP-EQUIV="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8">
+<!-- JRA-7598 - ensure fields (e.g. description) occupy only one cell - even fields containing newlines. -->
+<!--
+Vertical align all cells to the top, in order to align all issue rows of issuetable to the top,
+since Excel does not use or save the css files it is hardcoded here.
+-->
+<style>
+@page
+{
+mso-page-orientation:landscape;
+margin:.25in .25in .5in .25in;
+mso-header-margin:.5in;
+mso-footer-margin:.25in;
+mso-footer-data:"&R&P of &N";
+mso-horizontal-page-align:center;
+mso-vertical-page-align:center;
+}
+
+td.issuekey,
+td.issuetype,
+td.status {
+    mso-style-parent: "";
+    mso-number-format: \@;
+    text-align: left;
+}
+br
+{
+    mso-data-placement:same-cell;
+}
+
+td
+{
+    vertical-align: top;
+}
+</style>
+
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook>
+<x:ExcelWorksheets>
+<x:ExcelWorksheet>
+<x:Name>general_report</x:Name>
+<x:WorksheetOptions>
+<x:Print>
+<x:ValidPrinterInfo/>
+</x:Print>
+</x:WorksheetOptions>
+</x:ExcelWorksheet>
+</x:ExcelWorksheets>
+</x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+<body>
+
+
+                                        <table id="issuetable" class="aui " border="1" cellpadding="3" cellspacing="1" width="100%">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                                                        Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                                                        Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-assignee" data-id="assignee">
+                                                        Assignee
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-reporter" data-id="reporter">
+                                                        Reporter
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-priority" data-id="priority">
+                                                        Priority
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-status" data-id="status">
+                                                        Status
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10091" data-id="customfield_10091">
+                                                        Found in
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10092" data-id="customfield_10092">
+                                                        Function Under Test
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10123" data-id="customfield_10123">
+                                                        Fixed Version
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-description" data-id="description">
+                                                        Description
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10090" data-id="customfield_10090">
+                                                        Initial State
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10093" data-id="customfield_10093">
+                                                        Steps to Reproduce
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10096" data-id="customfield_10096">
+                                                        Expected Outcome
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10097" data-id="customfield_10097">
+                                                        Actual Outcome
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow10099" rel="10099" data-issuekey="SENG637-1" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-1" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-1">SENG637-1</a>
+</td>
+                                            <td class="summary"><p>
+                No log message when starting or shutting down ATM machine
+    </p>
+</td>
+                                            <td class="assignee">            Aidan MacNichol
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           Low
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Logs
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description">            As per the requirements state, “Entries will be made in the log when the ATM is started up and shut down”. However, there is no log message when starting up or shutting down the ATM machine.
+    </td>
+                                            <td class="customfield_10090">      Machine is off and has no cash
+  </td>
+                                            <td class="customfield_10093">      # Switch on the machine.<br/>
+# Enter the amount of $20 bills to have initially.<br/>
+# Check out the logs.
+  </td>
+                                            <td class="customfield_10096">      A log message that says the machine was turned on with X amount of dollars.
+  </td>
+                                            <td class="customfield_10097">      There is no log message:<br/>
+<br/>
+!image-20250126-213932 (12672401-8c9c-4d82-bf46-c081a412a9df).png|width=647,height=479!
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10100" rel="10100" data-issuekey="SENG637-2" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-2" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-2">SENG637-2</a>
+</td>
+                                            <td class="summary"><p>
+                A balance inquiry on secondary account fails and dispenses cash
+    </p>
+</td>
+                                            <td class="assignee">            Aidan MacNichol
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Inquiry
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description"></td>
+                                            <td class="customfield_10090">      Machine is ready and not servicing a customer
+  </td>
+                                            <td class="customfield_10093">      # Initiate session with card 1.<br/>
+## Insert card.<br/>
+## Read 1 as card number.<br/>
+## Enter 42 as PIN.<br/>
+# Enter key 4 to select Balance Inquiry <br/>
+# Enter key 2 to inquire about the secondary account
+  </td>
+                                            <td class="customfield_10096">      Current balance is displayed for the secondary account
+  </td>
+                                            <td class="customfield_10097">      Unknown error and $500 are dispensed<br/>
+<br/>
+!image-2025-01-26-19-29-56-758 (7fc8b960-f8fe-442e-9025-17d0dae7d227).png|width=975,height=714!
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10101" rel="10101" data-issuekey="SENG637-3" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-3" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-3">SENG637-3</a>
+</td>
+                                            <td class="summary"><p>
+                Selecting an invalid option will dispense cash
+    </p>
+</td>
+                                            <td class="assignee">            Aidan MacNichol
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Session
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description">            If the user enters a key other than the options on the screen, $20 will be dispensed for each time the key is entered.
+    </td>
+                                            <td class="customfield_10090">      Machine is ready, servicing a customer
+  </td>
+                                            <td class="customfield_10093">      # Enter a key that is not one of the options displayed on the screen.
+  </td>
+                                            <td class="customfield_10096">      Nothing happens
+  </td>
+                                            <td class="customfield_10097">      $20 are dispensed
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10102" rel="10102" data-issuekey="SENG637-4" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-4" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-4">SENG637-4</a>
+</td>
+                                            <td class="summary"><p>
+                Transfers are $0.50 short to the selected amount
+    </p>
+</td>
+                                            <td class="assignee">            Bailey Collison
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;RESOLVED&lt;/span&gt;">RESOLVED</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Transaction
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description">            When the customer makes a transaction between accounts the transfers are $0.50 short to the selected amount.
+    </td>
+                                            <td class="customfield_10090">      Machine is ready and not servicing a customer
+  </td>
+                                            <td class="customfield_10093">      # Initiate session with card 1.<br/>
+## Insert card.<br/>
+## Read 1 as card number.<br/>
+## Enter 42 as PIN.<br/>
+# Enter key 3 to select “Transfer” as the transaction type.<br/>
+# Enter key 1 to select “Checking” as the account to transfer from.<br/>
+# Enter key 2 to select “Savings” as the account to transfer to.<br/>
+# Enter $40.00 as the amount to transfer.<br/>
+# The transferred amount is $0.50 short
+  </td>
+                                            <td class="customfield_10096">      The transferred amount should be $40.00
+  </td>
+                                            <td class="customfield_10097">      The transferred amount is $39.50<br/>
+<br/>
+!image-20250129-043559.png|width=224,height=132,alt=&quot;image-20250129-043559.png&quot;!
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10103" rel="10103" data-issuekey="SENG637-5" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-5" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-5">SENG637-5</a>
+</td>
+                                            <td class="summary"><p>
+                Account order is incorrect in receipt for a transfer transaction
+    </p>
+</td>
+                                            <td class="assignee">            Bailey Collison
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           Low
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Transfer
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description">            When doing a transaction the order of the accounts in the printed accounts is wrong. For example, if user transfers money from account1 (ACC1) to account2 (ACC2), the receipt says “TRANSFER FROM: ACC1 TO: ACC2”
+    </td>
+                                            <td class="customfield_10090">      Machine is ready and not servicing a customer
+  </td>
+                                            <td class="customfield_10093">      # Enter key 3 to select “Transfer” as the transaction type.<br/>
+# Enter key 1 to select “Checking” as the account to transfer from.<br/>
+# Enter key 2 to select “Savings” as the account to transfer to.<br/>
+# Enter $40.00 as the amount to transfer.
+  </td>
+                                            <td class="customfield_10096">      The printed receipt should say:<br/>
+<br/>
+* “TRANSFER FROM: CHKG TO: SVGS“
+  </td>
+                                            <td class="customfield_10097">      The printed receipt says:<br/>
+<br/>
+* “TRANSFER FROM: SVGS TO: CHKG“
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10132" rel="10132" data-issuekey="SENG637-6" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-6" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-6">SENG637-6</a>
+</td>
+                                            <td class="summary"><p>
+                MFT: Balance inquiry page displays account not linked to the card
+    </p>
+</td>
+                                            <td class="assignee">            Bailey Collison
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;RESOLVED&lt;/span&gt;">RESOLVED</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Inquiry
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description"></td>
+                                            <td class="customfield_10090">      Machine is idle
+  </td>
+                                            <td class="customfield_10093">      # Initiate session with card 1.<br/>
+## Insert card.<br/>
+## Read 1 as card number.<br/>
+## Enter 42 as PIN.<br/>
+# Enter key 4 to select Balance Inquiry 
+  </td>
+                                            <td class="customfield_10096">      Accounts to inquire about should be:<br/>
+<br/>
+# Checking<br/>
+# Savings<br/>
+# Money Market
+  </td>
+                                            <td class="customfield_10097">      Accounts to inquire about are:<br/>
+<br/>
+# Checking<br/>
+# Money Market<br/>
+<br/>
+!image-20250128-230408.png|width=374,height=106,alt=&quot;image-20250128-230408.png&quot;!
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10165" rel="10165" data-issuekey="SENG637-7" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-7" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-7">SENG637-7</a>
+</td>
+                                            <td class="summary"><p>
+                MFT: Typo in prompt for another transaction
+    </p>
+</td>
+                                            <td class="assignee">            Yael Gonzalez
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           Low
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;RESOLVED&lt;/span&gt;">RESOLVED</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Display Messages &amp; Ticket Messages
+</td>
+                                            <td class="customfield_10123">      V 1.1
+  </td>
+                                            <td class="description">            There is a typo on the prompt “Wood you like to do another transaction?”
+    </td>
+                                            <td class="customfield_10090">      Machine is on, servicing a customer, displaying menu of transaction types
+  </td>
+                                            <td class="customfield_10093">      # Enter any key between 1 to 4 to select any transaction type.<br/>
+# Enter CANCEL key.
+  </td>
+                                            <td class="customfield_10096">      User should be prompted:<br/>
+<br/>
+* “Would you like to do another transaction?”
+  </td>
+                                            <td class="customfield_10097">      User is prompted:<br/>
+<br/>
+* “Wood you like to do another transaction?”<br/>
+<br/>
+!image-20250129-035617.png|width=352,height=137,alt=&quot;image-20250129-035617.png&quot;!
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10166" rel="10166" data-issuekey="SENG637-8" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-8" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-8">SENG637-8</a>
+</td>
+                                            <td class="summary"><p>
+                Withdrawal amount is incorrect
+    </p>
+</td>
+                                            <td class="assignee">            Yael Gonzalez
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Withdrawal
+</td>
+                                            <td class="customfield_10123">      V 1.1
+  </td>
+                                            <td class="description">            When withdrawing money, the customer will be served cash other than the requested amount.
+    </td>
+                                            <td class="customfield_10090">      Machine is on, servicing a customer with a balance over $40, displaying menu of transaction types
+  </td>
+                                            <td class="customfield_10093">      # Enter key 1 to select Withdrawal transaction type<br/>
+# Enter key 1 to select the Checking account to withdraw from<br/>
+# Enter key 1 to select to withdraw $20 
+  </td>
+                                            <td class="customfield_10096">      $20 is withdrawn
+  </td>
+                                            <td class="customfield_10097">      $40 is withdrawn
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10198" rel="10198" data-issuekey="SENG637-9" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-9" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-9">SENG637-9</a>
+</td>
+                                            <td class="summary"><p>
+                MFT: Card number in printed receipt is incorrect
+    </p>
+</td>
+                                            <td class="assignee">            poz
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Display Messages &amp; Ticket Messages
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description">            The card number in the printed receipt handed out to the customer is incorrect, it is shown properly in the logs.
+    </td>
+                                            <td class="customfield_10090">      Machine is ready and not servicing a customer
+  </td>
+                                            <td class="customfield_10093">      # Initiate session with card 1.<br/>
+## Insert card.<br/>
+## Read 1 as card number.<br/>
+## Enter 42 as PIN.<br/>
+# Complete any transaction, such as a balance inquiry:<br/>
+## Enter key 4 to select Balance Inquiry as transaction type<br/>
+## Enter key 1 to select Checking as the account to inquire about
+  </td>
+                                            <td class="customfield_10096">      The printed receipt should say “CARD 1”
+  </td>
+                                            <td class="customfield_10097">      The printed receipt says “CARD 2”<br/>
+<br/>
+<br/>
+<br/>
+!image-20250129-051016.png|width=222,height=132,alt=&quot;image-20250129-051016.png&quot;!
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10199" rel="10199" data-issuekey="SENG637-10" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-10" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-10">SENG637-10</a>
+</td>
+                                            <td class="summary"><p>
+                MFT: Upon failed PIN, user is asked twice to enter the correct one
+    </p>
+</td>
+                                            <td class="assignee">            poz
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Authentication
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description">            If the user fails PIN, the system will ask them to enter the correct PIN. When the correct PIN is entered, user will be prompted to enter it one more time.
+    </td>
+                                            <td class="customfield_10090">      Machine is ready and not servicing a customer
+  </td>
+                                            <td class="customfield_10093">      # Insert card<br/>
+# Enter wrong PIN<br/>
+# Enter correct PIN
+  </td>
+                                            <td class="customfield_10096">      User should be authenticated, and the system should be displaying the menu of transaction types
+  </td>
+                                            <td class="customfield_10097">      User is prompted to re-enter the PIN
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10200" rel="10200" data-issuekey="SENG637-11" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-11" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-11">SENG637-11</a>
+</td>
+                                            <td class="summary"><p>
+                MFT: The deposited amount is not fully applied on balance
+    </p>
+</td>
+                                            <td class="assignee">            poz
+    </td>
+                                            <td class="reporter">            Yael Gonzalez
+    </td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.0
+</td>
+                                            <td class="customfield_10092">    Deposit
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description"></td>
+                                            <td class="customfield_10090">      Machine is on, servicing a customer, displaying menu of transaction types
+  </td>
+                                            <td class="customfield_10093">      # Enter key 2 to make a Deposit<br/>
+# Enter key 1 to select “Checking” as the account to deposit to<br/>
+# Enter $40.00 as the indicated amount to deposit<br/>
+# Insert envelope with cash
+  </td>
+                                            <td class="customfield_10096">      $40.00 should be applied on the total balance
+  </td>
+                                            <td class="customfield_10097">      $30.00 are applied on the total balance<br/>
+<br/>
+!image-20250129-054218.png|width=69,height=33,alt=&quot;image-20250129-054218.png&quot;!
+  </td>
+                    </tr>
+
+
+                <tr id="issuerow10231" rel="10231" data-issuekey="SENG637-12" class="issuerow">
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SENG637-12" href="https://ucalgary-team-thirteen.atlassian.net/browse/SENG637-12">SENG637-12</a>
+</td>
+                                            <td class="summary"><p>
+                RT: Typo in withdrawal menu for $60
+    </p>
+</td>
+                                            <td class="assignee">            Bailey Collison
+    </td>
+                                            <td class="reporter">            Bailey Collison
+    </td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;">In Progress</span>    </td>
+                                            <td class="customfield_10091">    V 1.1
+</td>
+                                            <td class="customfield_10092">    Withdrawal
+</td>
+                                            <td class="customfield_10123"></td>
+                                            <td class="description">            The $60 option when withdrawing from an account is missing a &#39;$&#39;.
+    </td>
+                                            <td class="customfield_10090">      Machine is ready, servicing a customer
+  </td>
+                                            <td class="customfield_10093">      # Enter key 1 to select “Withdrawal” as the transaction type.<br/>
+# Enter key 1 to select “Checking” as the account type.
+  </td>
+                                            <td class="customfield_10096">      There should be a list of options to withdraw from in specified increments of $20, including $60.
+  </td>
+                                            <td class="customfield_10097">      The machine shows a list to withdraw from, but it shows “60” instead of “$60”.
+  </td>
+                    </tr>
+        </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            <table border="1" >
+<tr>
+    <td bgcolor="#dddddd" colspan="14"><font size="1">
+        Generated at Thu Jan 30 03:44:15 GMT 2025 by Yael Gonzalez using Jira 1001.0.0-SNAPSHOT#100277-rev:f551ee731bdec4ccaeea1b8df197af14000fb5e2.
+    </font></td>
+</tr>
+</table>
+
+</body>
+</html>
